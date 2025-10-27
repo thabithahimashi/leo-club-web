@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo.png" type="image/png">
+
+        <title>Leo Club of BCI - About</title>
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="index.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Tailwind Config -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'leo-blue': '#0056b3',
+                            'leo-gold': '#FFD700',
+                        },
+                    }
+                }
+            }
+        </script>
+    </head>
+<body class="font-sans">
+    <header class="bg-leo-blue text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="images/logo.png" alt="Leo Club Logo" class="h-12">
+                    <h1 class="text-xl font-bold">Leo Club of BCI</h1>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-leo-gold transition">Home</a>
+                    <a href="about.html" class="hover:text-leo-gold transition">About Us</a>
+                    <a href="projects.html" class="hover:text-leo-gold transition">Projects</a>
+                    <a href="team.html" class="hover:text-leo-gold transition">Team</a>
+                </nav>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-3">
+                    <a href="index.html" class="hover:text-leo-gold transition">Home</a>
+                    <a href="about.html" class="hover:text-leo-gold transition">About Us</a>
+                    <a href="projects.html" class="hover:text-leo-gold transition">Projects</a>
+                    <a href="team.html" class="hover:text-leo-gold transition">Team</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="py-16">
+        <section class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-leo-blue">About Leo Club of BCI</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-leo-gold">Our Mission</h3>
+                    <p class="mb-4 text-gray-700">
+                        The Leo Club of BCI is a youth organization of Lions Clubs International that provides young people
+                        with opportunities for development and contribution, individually and collectively, as responsible
+                        members of the local, national, and international community.
+                    </p>
+                    <p class="mb-4 text-gray-700">
+                        Our mission is to provide the youth of the world with an opportunity for development and contribution,
+                        individually and collectively, as responsible members of the local, national, and international community.
+                    </p>
+                </div>
+                <div>
+                    <img src="images/fb cover.png" alt="Leo Club Members" class="rounded-lg shadow-md w-full">
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold mb-6 text-leo-gold">Our History</h3>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-leo-blue pl-4 py-2">
+                        <h4 class="font-bold text-lg">Founded in 2023</h4>
+                        <p class="text-gray-700">Leo Club of BCI was established as a campus based club</p>
+                    </div>
+                    <div class="border-l-4 border-leo-blue pl-4 py-2">
+                        <h4 class="font-bold text-lg">First Major Project in 2023</h4>
+                        <p class="text-gray-700">Organized a christmas event named felixinight.</p>
+                    </div>
+                    <div class="border-l-4 border-leo-blue pl-4 py-2">
+                        <h4 class="font-bold text-lg">Award Winning in 2024</h4>
+                        <p class="text-gray-700">Received the "Best campus based club" award.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+ <!-- Footer -->
+ <footer class="bg-gray-900 text-white py-12">
+ <div class="container mx-auto px-4">
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+         <div class="md:flex md:flex-col md:items-center">
+             <h3 class="text-xl font-bold mb-4 text-leo-gold">Leo Club of BCI</h3>
+             <p class="mb-4 max-w-xs">
+                 Dedicated to serving our community through leadership and volunteerism.
+             </p>
+             <div class="flex space-x-4 justify-center">
+                 <a href="https://web.facebook.com/profile.php?id=100093836247971" class="hover:text-leo-gold transition text-xl">
+                     <i class="fab fa-facebook-f"></i>
+                 </a>
+             </div>
+         </div>
+         
+         <div class="md:flex md:flex-col md:items-center">
+             <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+             <ul class="space-y-2">
+                 <li><a href="index.html" class="hover:text-leo-gold transition">Home</a></li>
+                 <li><a href="about.html" class="hover:text-leo-gold transition">About Us</a></li>
+                 <li><a href="projects.html" class="hover:text-leo-gold transition">Projects</a></li>
+                 <li><a href="gallery.html" class="hover:text-leo-gold transition">Gallery</a></li>
+                 <li><a href="team.html" class="hover:text-leo-gold transition">Team</a></li>
+             </ul>
+         </div>
+         
+         <div class="md:flex md:flex-col md:items-center">
+             <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+             <address class="not-italic">
+                 <p>BCI Campus</p>
+                 <p>495, Minuwangoda Road, Bolawalana,</p>
+                 <p> Negombo, Sri Lanka</p>
+                 <p class="mt-2">Email: bcileo23@gmail.com</p>
+             </address>
+         </div>
+     </div>
+     
+     <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+         <p>&copy; <span id="current-year"></span> Leo Club of BCI. All rights reserved.</p>
+     </div>
+ </div>
+</footer>
+<script src="index.js"></script>
+</body>
+</html>

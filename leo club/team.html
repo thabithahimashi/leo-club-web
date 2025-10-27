@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <title>Leo Club of BCI - Our Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'leo-blue': '#0056b3',
+                        'leo-gold': '#FFD700',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Same header as index.html -->
+    <header class="bg-leo-blue text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="images/logo.png" alt="Leo Club Logo" class="h-12">
+                    <h1 class="text-xl font-bold">Leo Club of BCI</h1>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-leo-gold transition">Home</a>
+                    <a href="about.html" class="hover:text-leo-gold transition">About Us</a>
+                    <a href="projects.html" class="hover:text-leo-gold transition">Projects</a>
+                    <a href="team.html" class="hover:text-leo-gold transition">Team</a>
+                </nav>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-3">
+                    <a href="index.html" class="hover:text-leo-gold transition">Home</a>
+                    <a href="about.html" class="hover:text-leo-gold transition">About Us</a>
+                    <a href="projects.html" class="hover:text-leo-gold transition">Projects</a>
+                    <a href="team.html" class="hover:text-leo-gold transition">Team</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16">
+        <section class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-leo-blue">Our Team</h2>
+            
+            <div class="mb-12 text-center max-w-3xl mx-auto">
+                <p class="text-lg text-gray-700">
+                    Meet the dedicated individuals who make the Leo Club of BCI possible. Our team works tirelessly to organize
+                    events, manage operations, and ensure we make the maximum impact in our community.
+                </p>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-center text-leo-gold">Executive Board</h3>
+                <div class="grid md:grid-cols-3 gap-8" id="executive-board">
+                    <!-- Executive team will be loaded here -->
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-center text-leo-gold">Directors</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="committee-heads">
+                    <!-- Committee heads will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Same footer as index.html -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div class="md:flex md:flex-col md:items-center">
+                    <h3 class="text-xl font-bold mb-4 text-leo-gold">Leo Club of BCI</h3>
+                    <p class="mb-4 max-w-xs">
+                        Dedicated to serving our community through leadership and volunteerism.
+                    </p>
+                    <div class="flex space-x-4 justify-center">
+                        <a href="https://web.facebook.com/profile.php?id=100093836247971" class="hover:text-leo-gold transition text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:flex md:flex-col md:items-center">
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-leo-gold transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-leo-gold transition">About Us</a></li>
+                        <li><a href="projects.html" class="hover:text-leo-gold transition">Projects</a></li>
+                        <li><a href="gallery.html" class="hover:text-leo-gold transition">Gallery</a></li>
+                        <li><a href="team.html" class="hover:text-leo-gold transition">Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:flex md:flex-col md:items-center">
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <address class="not-italic">
+                        <p>BCI Campus</p>
+                        <p>495, Minuwangoda Road, Bolawalana,</p>
+                        <p> Negombo, Sri Lanka</p>
+                        <p class="mt-2">Email: bcileo23@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; <span id="current-year"></span> Leo Club of BCI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+        // Team specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const executiveTeam = [
+                { 
+                    id: 1, 
+                    name: "Leo Mishel", 
+                    position: "President", 
+                    image: "images/team/mishel.jpg",
+                    bio: "Leads the club with vision and dedication, ensuring all projects align with our mission."
+                },
+                { 
+                    id: 2, 
+                    name: "Leo Nipuna", 
+                    position: "Vice President", 
+                    image: "images/team/Nipuna.jpg",
+                    bio: "Supports the president and oversees daily operations of the club."
+                },
+                { 
+                    id: 3, 
+                    name: "Leo Thabitha", 
+                    position: "Secretary", 
+                    image: "images/team/thabitha.jpg",
+                    bio: "Manages club records, minutes, and official communications."
+                },
+                { 
+                    id: 4, 
+                    name: "Leo dulaksha", 
+                    position: "Vice Secretary", 
+                    image: "images/team/dulaksha.jpg",
+                    bio: "supports the secretary in managing club records and communications."
+                },
+                { 
+                    id: 5, 
+                    name: "Leo Nisal", 
+                    position: "Treasurer", 
+                    image: "images/team/Nisal.jpg",
+                    bio: "Responsible for managing the club's finances and budget."
+                },
+                { 
+                    id: 6, 
+                    name: "Leo Shinega", 
+                    position: "Vice Treasurer", 
+                    image: "images/team/Shinega.jpg",
+                    bio: "Assists the treasurer in managing finances and fundraising efforts."
+                }
+            ];
+
+            const committeeHeads = [
+                { 
+                    id: 1, 
+                    name: "Leo Abishek", 
+                    image: "images/team/Abishek.jpg",
+                    position: "Director"
+                },
+                { 
+                    id: 2, 
+                    name: "Leo Anjalee", 
+                    image: "images/team/Anjalee.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 3, 
+                    name: "Leo Binura", 
+                    image: "images/team/Binura.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 4, 
+                    name: "Leo Gayathri", 
+                    image: "images/team/Gayathri.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 5, 
+                    name: "Leo Harsha", 
+                    image: "images/team/Harsha.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 6, 
+                    name: "Leo Jerom", 
+                    image: "images/team/Jerom.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 7, 
+                    name: "Leo Muthu", 
+                    image: "images/team/Muthu.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 8, 
+                    name: "Leo Nimesh", 
+                    image: "images/team/Nimesh.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 9, 
+                    name: "Leo Prathap", 
+                    image: "images/team/Prathap.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 10, 
+                    name: "Leo Ruthik", 
+                    image: "images/team/Ruthik.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 11, 
+                    name: "Leo Sachintha", 
+                    image: "images/team/Sachintha.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 12, 
+                    name: "Leo Savindi", 
+                    image: "images/team/Savindi.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 13, 
+                    name: "Leo Shehan", 
+                    image: "images/team/Shehan.png",
+                          position: "Director"
+                },
+                { 
+                    id: 14, 
+                    name: "Leo Shenara", 
+                    image: "images/team/Shenara.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 15, 
+                    name: "Leo Kaveen", 
+                    image: "images/team/Viwajith.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 16, 
+                    name: "Leo Waranga", 
+                    image: "images/team/Wranga.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 17, 
+                    name: "Leo Yuwi", 
+                    image: "images/team/Yuwi.jpg",
+                          position: "Director"
+                },
+                { 
+                    id: 18, 
+                    name: "Leo Zaeem", 
+                    image: "images/team/Zaeem.jpg",
+                          position: "Director"
+                }  
+            ];
+
+            const executiveContainer = document.getElementById('executive-board');
+            const committeeContainer = document.getElementById('committee-heads');
+
+            function renderTeamMember(member, isExecutive = true) {
+                const memberElement = document.createElement('div');
+                memberElement.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition';
+                memberElement.innerHTML = `
+                    <div class="relative">
+                        <img 
+                            src="${member.image}" 
+                            alt="${member.name}" 
+                            class="w-full h-64 object-cover"
+                        />
+                        <div class="absolute bottom-0 left-0 right-0 bg-leo-blue bg-opacity-90 text-white p-4">
+                            <h4 class="font-bold text-lg">${member.name}</h4>
+                            <p class="text-leo-gold font-medium">${member.position}</p>
+                        </div>
+                    </div>
+                `;
+                return memberElement;
+            }
+
+            // Render executive team
+            executiveTeam.forEach(member => {
+                executiveContainer.appendChild(renderTeamMember(member, true));
+            });
+
+            // Render committee heads
+            committeeHeads.forEach(member => {
+                committeeContainer.appendChild(renderTeamMember(member, false));
+            });
+        });
+    </script>
+</body>
+</html>

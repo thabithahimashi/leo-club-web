@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <title>Leo Club of BCI - Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'leo-blue': '#0056b3',
+                        'leo-gold': '#FFD700',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Same header as index.html -->
+    <header class="bg-leo-blue text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="images/logo.png" alt="Leo Club Logo" class="h-12">
+                    <h1 class="text-xl font-bold">Leo Club of BCI</h1>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-leo-gold transition">Home</a>
+                    <a href="about.html" class="hover:text-leo-gold transition">About Us</a>
+                    <a href="projects.html" class="hover:text-leo-gold transition">Projects</a>
+                    <a href="team.html" class="hover:text-leo-gold transition">Team</a>
+                </nav>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-3">
+                    <a href="index.html" class="hover:text-leo-gold transition">Home</a>
+                    <a href="about.html" class="hover:text-leo-gold transition">About Us</a>
+                    <a href="projects.html" class="hover:text-leo-gold transition">Projects</a>
+                    <a href="team.html" class="hover:text-leo-gold transition">Team</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16">
+        <section class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-leo-blue">Our Event Gallery</h2>
+            
+            <div class="mb-8 text-center">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button data-filter="all" class="filter-btn px-4 py-2 text-sm font-medium rounded-l-lg bg-leo-blue text-white">
+                        All Events
+                    </button>
+                    <button data-filter="cleanup" class="filter-btn px-4 py-2 text-sm font-medium border-t border-b border-gray-300 bg-white text-leo-blue">
+                        Cleanups
+                    </button>
+                    <button data-filter="team work" class="filter-btn px-4 py-2 text-sm font-medium border-t border-b border-gray-300 bg-white text-leo-blue">
+                        Team work
+                    </button>
+                    <button data-filter="education" class="filter-btn px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-leo-blue">
+                        Education
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="event-gallery">
+                <!-- Images will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+   <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div class="md:flex md:flex-col md:items-center">
+                <h3 class="text-xl font-bold mb-4 text-leo-gold">Leo Club of BCI</h3>
+                <p class="mb-4 max-w-xs">
+                    Dedicated to serving our community through leadership and volunteerism.
+                </p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://web.facebook.com/profile.php?id=100093836247971" class="hover:text-leo-gold transition text-xl">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:flex md:flex-col md:items-center">
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-leo-gold transition">Home</a></li>
+                    <li><a href="about.html" class="hover:text-leo-gold transition">About Us</a></li>
+                    <li><a href="projects.html" class="hover:text-leo-gold transition">Projects</a></li>
+                    <li><a href="gallery.html" class="hover:text-leo-gold transition">Gallery</a></li>
+                    <li><a href="team.html" class="hover:text-leo-gold transition">Team</a></li>
+                </ul>
+            </div>
+            
+            <div class="md:flex md:flex-col md:items-center">
+                <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                <address class="not-italic">
+                    <p>BCI Campus</p>
+                    <p>495, Minuwangoda Road, Bolawalana,</p>
+                    <p> Negombo, Sri Lanka</p>
+                    <p class="mt-2">Email: bcileo23@gmail.com</p>
+                </address>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p>&copy; <span id="current-year"></span> Leo Club of BCI. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    
+
+    <script src="index.js"></script>
+    <script>
+        // Gallery specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryData = [
+                { id: 1, src: "images/gallery/beach cleanup.jpeg", alt: "Community Cleanup", category: "cleanup", title: "Beach cleanup Day" },
+                { id: 2, src: "images/gallery/club installation.jpeg", alt: "Blood Donation", category: "team work", title: "Club installation" },
+                { id: 3, src: "images/gallery/bonfire.jpeg", alt: "School Program", category: "team work", title: "Bonfire" },
+                { id: 4, src: "images/gallery/brest cancer walk.jpeg", alt: "Beach Cleanup", category: "education", title: "Brest cancer awareness walk" },
+                { id: 5, src: "images/gallery/club orientation.jpeg", alt: "Food Drive", category: "team work", title: "Club Orientation" },
+                { id: 6, src: "images/gallery/echo of kindness.jpeg", alt: "Teaching Kids", category: "team work", title: "Feeding street dogs" },
+                { id: 7, src: "images/gallery/illuminight.jpeg", alt: "Street Cleaning", category: "team work", title: "DJ Night" },
+                { id: 8, src: "images/gallery/she rise.jpeg", alt: "Clothes Donation", category: "education", title: "Woman wellbeing" },
+                { id: 9, src: "images/gallery/pixel path.jpeg", alt: "Computer Class", category: "education", title: "Digital Literacy Program" },
+                { id: 10, src: "images/gallery/health1.jpeg", alt: "Computer Class", category: "team work", title: "health for humanity phase 1" },
+                { id: 11, src: "images/gallery/health2.jpeg", alt: "Computer Class", category: "team work", title: "health for humanity phase 2" },
+                { id: 12, src: "images/gallery/health3.jpeg", alt: "Computer Class", category: "team work", title: "health for humanity phase 3" },
+                { id: 13, src: "images/gallery/senehase1.jpeg", alt: "Computer Class", category: "team work", title: "Sehehase Piyawara Phase 1" },
+                { id: 14, src: "images/gallery/senehase2.jpeg", alt: "Computer Class", category: "team work", title: "Sehehase Piyawara Phase 2" },
+                { id: 15, src: "images/gallery/sip1.jpeg", alt: "Computer Class", category: "team work", title: "Sip for Strenght phase 1" },
+                { id: 16, src: "images/gallery/sip2.jpeg", alt: "Computer Class", category: "team work", title: "Sip for Strenght phase 2" }
+                
+            ];
+
+            const galleryContainer = document.getElementById('event-gallery');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            function renderGallery(filter = 'all') {
+                galleryContainer.innerHTML = '';
+                
+                const filteredData = filter === 'all' 
+                    ? galleryData 
+                    : galleryData.filter(item => item.category === filter);
+                
+                filteredData.forEach(item => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition';
+                    galleryItem.innerHTML = `
+                        <div class="relative group">
+                            <img 
+                                src="${item.src}" 
+                                alt="${item.alt}" 
+                                class="w-full h-64 object-cover transition duration-500 group-hover:scale-105"
+                            />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <h3 class="text-white text-xl font-bold">${item.title}</h3>
+                            </div>
+                        </div>
+                    `;
+                    galleryContainer.appendChild(galleryItem);
+                });
+            }
+
+            // Initial render
+            renderGallery();
+
+            // Filter button functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-leo-blue', 'text-white');
+                        btn.classList.add('bg-white', 'text-leo-blue');
+                    });
+                    this.classList.add('bg-leo-blue', 'text-white');
+                    this.classList.remove('bg-white', 'text-leo-blue');
+                    
+                    // Filter gallery
+                    const filter = this.dataset.filter;
+                    renderGallery(filter);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
